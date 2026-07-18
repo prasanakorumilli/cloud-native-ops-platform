@@ -1,6 +1,6 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
+# ==============================================================================
+# Go Baseline Configurations
+# ==============================================================================
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -24,9 +24,65 @@ profile.cov
 go.work
 go.work.sum
 
-# env file
-.env
+# ==============================================================================
+# Terraform & OpenTofu Protection Rules
+# ==============================================================================
+# Core state and runtime files
+*.tfstate
+*.tfstate.*
+.terraform.tfstate.lock.info
 
-# Editor/IDE
-# .idea/
-# .vscode/
+# Crash logs
+crash.log
+crash.*.log
+
+# Terraform configuration overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Local CLI configuration files
+.terraformrc
+terraform.rc
+
+# Hidden Terraform working directories
+.terraform/
+
+# Terraform variable files (Contains cloud/infrastructure secrets)
+*.tfvars
+*.tfvars.json
+
+# ==============================================================================
+# Cloud-Native & DevOps Platforms Custom Additions
+# ==============================================================================
+# Local cluster state & tokens
+*.kubeconfig
+*kubeconfig.yaml
+*kubeconfig
+.kube/
+
+# Secrets, Credentials, and Cloud Keys
+*.pem
+*.key
+*.pub
+*.passwd
+.env
+.env.*
+!.env.example
+secrets.yaml
+*secret*.yaml
+
+# Local Helm & Kustomize cache/builds
+.helm/
+/.kustomize/
+dist/
+
+# ONLY ignore deep dependencies, do NOT ignore your root custom charts directory
+**/charts/*.tgz
+**/charts/subcharts/
+
+# Editor / IDE / OS Tooling
+.idea/
+.vscode/
+.DS_Store
