@@ -9,9 +9,7 @@ spec:
   source:
     repoURL: https://github.com/prasanakorumilli/cloud-native-ops-platform.git
     targetRevision: main
-    path: charts/guestbook
-    helm:
-      releaseName: guestbook
+    path: applications/guestbook
 
   destination:
     server: https://kubernetes.default.svc
