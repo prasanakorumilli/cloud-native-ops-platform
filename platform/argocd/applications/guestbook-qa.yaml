@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook-qa
+  namespace: argocd
+  annotations:
+    platform.example.com/environment: qa
+    platform.example.com/managed-by: root-app
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/prasanakorumilli/cloud-native-ops-platform.git
+    targetRevision: main
+    path: charts/guestbook
+    helm:
+      releaseName: guestbook-qa
+      valueFiles:
+        - ../../enviornments/qa/guestbook-values.yaml    
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: guestbook-qa
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
