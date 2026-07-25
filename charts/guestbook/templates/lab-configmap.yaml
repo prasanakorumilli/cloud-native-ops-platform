@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: guestbook-lab-config
-  labels:
-    app.kubernetes.io/name: guestbook-ui
-data:
-  exercise: "argo-cd-pruning"
-  owner: "git"
