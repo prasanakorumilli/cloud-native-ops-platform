@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: guestbook
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Guestbook applications for local development environments
+
+  sourceRepos:
+    - https://github.com/prasanakorumilli/cloud-native-ops-platform.git
+
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: guestbook-*
+
+  namespaceResourceWhitelist:
+    - group: apps
+      kind: Deployment
+    - group: ""
+      kind: Service
