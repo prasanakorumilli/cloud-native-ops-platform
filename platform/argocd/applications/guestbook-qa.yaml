@@ -7,7 +7,7 @@ metadata:
     platform.example.com/environment: qa
     platform.example.com/managed-by: root-app
 spec:
-  project: default
+  project: guestbook
 
   source:
     repoURL: https://github.com/prasanakorumilli/cloud-native-ops-platform.git
