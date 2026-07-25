@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: guestbook
   namespace: argocd
+  annotations:
+    platform.example.com/managed-by: root-app
 spec:
   project: default
 
