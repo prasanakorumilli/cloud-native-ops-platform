@@ -5,8 +5,8 @@ metadata:
   namespace: argocd
   annotations:
     platform.example.com/managed-by: root-app
-    finalizers:
-      - resources-finalizer.argocd.argoproj.io
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
 
