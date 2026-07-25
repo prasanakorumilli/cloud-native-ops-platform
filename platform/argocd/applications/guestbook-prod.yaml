@@ -16,11 +16,11 @@ spec:
     helm:
       releaseName: guestbook-prod
       valueFiles:
-        - ../../environments/dev/guestbook-values.yaml
+        - ../../environments/prod/guestbook-values.yaml
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: guestbook-dev
+    namespace: guestbook-prod
 
   syncPolicy:
     automated:

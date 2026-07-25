@@ -14,7 +14,7 @@ spec:
     targetRevision: main
     path: charts/guestbook
     helm:
-      releaseName: guestbook
+      releaseName: guestbook-dev
       valueFiles:
         - ../../environments/dev/guestbook-values.yaml
 
