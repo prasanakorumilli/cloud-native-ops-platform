@@ -16,7 +16,7 @@ spec:
     helm:
       releaseName: guestbook-qa
       valueFiles:
-        - ../../enviornments/qa/guestbook-values.yaml    
+        - ../../environments/qa/guestbook-values.yaml    
 
   destination:
     server: https://kubernetes.default.svc
