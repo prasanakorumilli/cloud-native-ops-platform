@@ -1,0 +1,10 @@
+# Local Go binaries
+server
+hello-api
+
+# Test and coverage output
+coverage.out
+*.test
+
+# Local environment files
+.env
