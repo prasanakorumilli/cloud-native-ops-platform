@@ -1,10 +1,10 @@
-# Local Go binaries
-server
-hello-api
+# Compiled binaries in the module root
+/hello-api
+/server
 
-# Test and coverage output
+# Test artifacts
 coverage.out
 *.test
 
-# Local environment files
+# Local environment
 .env
