@@ -16,6 +16,10 @@ spec:
     - server: https://kubernetes.default.svc
       namespace: hello-api-*
 
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
+
   namespaceResourceWhitelist:
     - group: apps
       kind: Deployment
