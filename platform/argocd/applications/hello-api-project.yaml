@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: hello-api
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+
+spec:
+  description: Hello API application environments
+
+  sourceRepos:
+    - https://github.com/prasanakorumilli/cloud-native-ops-platform.git
+
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: hello-api-*
+
+  namespaceResourceWhitelist:
+    - group: apps
+      kind: Deployment
+
+    - group: apps
+      kind: ReplicaSet
+
+    - group: ""
+      kind: Pod
+
+    - group: ""
+      kind: Service
+
+    - group: ""
+      kind: Secret
+
+    - group: networking.k8s.io
+      kind: Ingress
+
+    - group: cert-manager.io
+      kind: Certificate
+
+    - group: cert-manager.io
+      kind: CertificateRequest

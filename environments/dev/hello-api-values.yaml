@@ -1,0 +1,18 @@
+replicaCount: 1
+
+image:
+  repository: localhost/hello-api
+  tag: v0.1.0
+  pullPolicy: IfNotPresent
+
+ingress:
+  enabled: true
+  className: nginx
+  host: hello-api-dev.localhost
+  path: /
+  pathType: Prefix
+
+  tls:
+    enabled: true
+    secretName: hello-api-dev-tls
+    clusterIssuer: local-ca
