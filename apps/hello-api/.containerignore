@@ -1,0 +1,11 @@
+.git
+.gitignore
+Containerfile
+README.md
+
+server
+hello-api
+
+coverage.out
+*.test
+.env
