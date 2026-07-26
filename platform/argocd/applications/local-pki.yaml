@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: local-pki
+  namespace: argocd
+
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/prasanakorumilli/cloud-native-ops-platform.git
+    targetRevision: main
+    path: platform/cert-manager
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cert-manager
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true
