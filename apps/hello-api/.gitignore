@@ -1,0 +1,10 @@
+# Compiled binaries in the module root
+/hello-api
+/server
+
+# Test artifacts
+coverage.out
+*.test
+
+# Local environment
+.env
