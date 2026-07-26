@@ -1,0 +1,32 @@
+replicaCount: 1
+
+image:
+  repository: localhost/hello-api
+  tag: v0.1.0
+  pullPolicy: IfNotPresent
+
+containerPort: 8080
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 32Mi
+  limits:
+    cpu: 250m
+    memory: 128Mi
+
+ingress:
+  enabled: false
+  className: nginx
+  host: ""
+  path: /
+  pathType: Prefix
+
+  tls:
+    enabled: false
+    secretName: ""
+    clusterIssuer: local-ca

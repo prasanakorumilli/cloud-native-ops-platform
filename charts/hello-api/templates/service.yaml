@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-api
+  labels:
+    app.kubernetes.io/name: hello-api
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app.kubernetes.io/name: hello-api
+  ports:
+    - name: http
+      port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
