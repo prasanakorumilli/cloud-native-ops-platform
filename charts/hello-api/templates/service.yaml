@@ -4,6 +4,10 @@ metadata:
   name: hello-api
   labels:
     app.kubernetes.io/name: hello-api
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/path: "/metrics"
+    prometheus.io/port: {{ .Values.service.port | quote }}
 spec:
   type: {{ .Values.service.type }}
   selector:
