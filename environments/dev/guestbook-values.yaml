@@ -19,3 +19,8 @@ ingress:
   enabled: true
   className: nginx
   host: guestbook-dev.localhost
+
+  tls:
+    enabled: true
+    secretName: guestbook-dev-tls
+    clusterIssuer: local-ca

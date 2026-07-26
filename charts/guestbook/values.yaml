@@ -21,3 +21,8 @@ ingress:
   host: ""
   path: /
   pathType: Prefix
+
+  tls:
+    enabled: false
+    secretName: ""
+    ClusterIssuer: local-ca
